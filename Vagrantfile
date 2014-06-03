@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "chef/ubuntu-13.10"
+  config.vm.box = "hashicorp/precise64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -106,6 +106,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # You may also specify custom JSON attributes:
     chef.json = { 
+
+      "mysql" => {
+        "version" => "5.5",
+        "service_name" => "default",
+        "server_root_password" => "test",
+        "data_dir" => "/var/lib/mysql",
+        "port" => "3306"
+      }
     }
 
   end

@@ -1,6 +1,7 @@
 source "https://api.berkshelf.com"
 
+cookbook "apt"
 cookbook "apache2"
 cookbook "mysql"
-cookbook "drupal"
-cookbook 'scala_env', path: './cookbooks/drupal_sugar'
+cookbook "php"
+cookbook 'drupal_sugar', path: './cookbooks/drupal_sugar'

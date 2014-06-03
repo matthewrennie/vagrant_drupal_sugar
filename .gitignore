@@ -1,4 +1,8 @@
+*.lock
+.DS_Store
 .vagrant
+
+*.sublime-workspace
 
 # Bundler
 bin/*
