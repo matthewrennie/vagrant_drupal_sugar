@@ -99,11 +99,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.omnibus.chef_version = :latest
 
-  config.vm.provision "chef_solo" do |chef|    
+  config.vm.provision "chef_solo" do |chef|
     
     chef.add_recipe "drupal_sugar::default"
     chef.add_recipe "drupal_sugar::drupal"
     chef.add_recipe "drupal_sugar::mediawiki"
+    chef.add_recipe "drupal_sugar::sugar"
 
     chef.log_level = "debug"
 
