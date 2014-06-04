@@ -23,15 +23,6 @@ execute "set ownership of mediawiki to www.data" do
   command "chown -R www-data.www-data /var/www/mediawiki/"  
 end
 
-# create sbt repo settings
-template "LocalSettings.php.erb" do
-  path "/var/www/mediawiki/LocalSettings.php"
-  source "LocalSettings.php.erb"
-  owner "www-data"
-  group "www-data"
-  mode "0644"
-end
-
 execute "restart apache" do
   user "root"
   command "service apache2 restart"  
