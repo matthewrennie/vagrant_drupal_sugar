@@ -101,7 +101,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "chef_solo" do |chef|    
     
-    chef.add_recipe "drupal_sugar"
+    chef.add_recipe "drupal_sugar::default"
+    chef.add_recipe "drupal_sugar::drupal"
+    chef.add_recipe "drupal_sugar::mediawiki"
+
     chef.log_level = "debug"
 
     # You may also specify custom JSON attributes:
